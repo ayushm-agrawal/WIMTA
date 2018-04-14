@@ -36,7 +36,7 @@ public class ActivityRegister extends AppCompatActivity implements View.OnClickL
         mVerify = findViewById(R.id.verify);
         mAuth = FirebaseAuth.getInstance();
 
-        findViewById(R.id.verify).setOnClickListener(this);
+       mVerify.setOnClickListener(this);
 
 
     }
@@ -75,8 +75,9 @@ public class ActivityRegister extends AppCompatActivity implements View.OnClickL
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if (task.isSuccessful()) {
-                      Toast.makeText(getApplicationContext(), "Registering!", Toast.LENGTH_SHORT).show();
-//                      startActivity(new Intent(ActivityRegister.this, ActivityCreateBasicProfile.class));
+                      Toast.makeText(getApplicationContext(), "Successfully Registered!", Toast.LENGTH_SHORT).show();
+                      startActivity(new Intent(ActivityRegister.this, ActivityCreateBasicProfile.class));
+                      finish();
                 } else {
 
                     if (task.getException() instanceof FirebaseAuthUserCollisionException) {
