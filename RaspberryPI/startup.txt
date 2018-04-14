@@ -1,0 +1,11 @@
+#System will shutdown
+sudo shutdown -h now
+
+#Making Bluetooth Discoverable Forever
+sudo hciconfig hciX piscan
+
+#Running startup script
+python starup_script.py
+
+
+
