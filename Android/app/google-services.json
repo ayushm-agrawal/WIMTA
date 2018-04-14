@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "314504936909",
+    "firebase_url": "https://wimta-b0aba.firebaseio.com",
+    "project_id": "wimta-b0aba",
+    "storage_bucket": "wimta-b0aba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314504936909:android:513c455dc3179f49",
+        "android_client_info": {
+          "package_name": "com.manali.wimta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314504936909-4stap8bfsnupvh30u1pn419cn046cr4e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.manali.wimta",
+            "certificate_hash": "555267c13c6a01ab4a6aee30715f02b1d72ab777"
+          }
+        },
+        {
+          "client_id": "314504936909-8jl0dhaumsntlhdf4ljfhrnlt8rlept2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.manali.wimta",
+            "certificate_hash": "06677a97b78d03f3d3011ec293b4d783d5f17e1c"
+          }
+        },
+        {
+          "client_id": "314504936909-0ai2m191g046q589kae4lho7tri62laa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZ5bFxKkUadK5BF7ZwO1kA3N85Ke8w2A8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314504936909-0ai2m191g046q589kae4lho7tri62laa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
