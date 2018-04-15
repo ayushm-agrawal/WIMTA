@@ -86,7 +86,7 @@ public class ActivityCreateBasicProfile extends AppCompatActivity {
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if(task.isSuccessful()){
                                             Toast.makeText(ActivityCreateBasicProfile.this, "User details were added successfully", Toast.LENGTH_SHORT).show();
-                                            Intent verifyTAIntent = new Intent(ActivityCreateBasicProfile.this, ActivityVerifyTA.class);
+                                            Intent verifyTAIntent = new Intent(ActivityCreateBasicProfile.this, MainActivity.class);
                                             startActivity(verifyTAIntent);
                                             finish();
                                         }
