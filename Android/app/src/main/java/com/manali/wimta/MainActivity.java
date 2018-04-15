@@ -56,12 +56,18 @@ public class MainActivity extends AppCompatActivity {
             btnCheckOut.setVisibility(View.VISIBLE);
             btnCheckIn.setVisibility(View.GONE);
         }
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        assert user != null;
+        mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(user.getUid()).child("taStatus");
+        if(mDatabaseReference.toString().equals("0")){
+            btnCheckIn.setVisibility(View.GONE);
+            btnCheckOut.setVisibility(View.GONE);
+        }
         assert btnCheckIn != null;
         btnCheckIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 if (!mBluetoothAdapter.isEnabled()) {
                     String scanModeChanged = BluetoothAdapter.ACTION_SCAN_MODE_CHANGED;
                     String beDiscoverable = BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE;
