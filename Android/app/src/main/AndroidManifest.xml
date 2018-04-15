@@ -22,8 +22,7 @@
         <activity
             android:name=".ActivityWelcome"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
