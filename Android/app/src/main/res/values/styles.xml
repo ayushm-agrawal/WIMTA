@@ -7,11 +7,19 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">#ffffff</item>
+
+        <!-- Enable Window Transitions-->
+        <item name="android:windowActivityTransitions">true</item>
+
     </style>
 
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
 
         <item name="windowNoTitle">true</item>
+        <item name="colorControlActivated">#FFF</item>
+        <item name="colorControlNormal">#FFF</item>
+        <item name="colorControlHighlight">#FFF</item>
 
     </style>
+
 </resources>

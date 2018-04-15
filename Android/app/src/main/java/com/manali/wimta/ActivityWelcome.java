@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +27,8 @@ public class ActivityWelcome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+
+        //declare and initialize variables
         final TextView goToSignUp = findViewById(R.id.gotoSignUp);
         final TextInputLayout email = findViewById(R.id.emailLogin);
         final TextInputLayout password = findViewById(R.id.passwordLogin);
@@ -37,9 +38,11 @@ public class ActivityWelcome extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //get email and password from input
                 final String emailText = Objects.requireNonNull(email.getEditText()).getText().toString().trim();
                 final String passwordText = Objects.requireNonNull(Objects.requireNonNull(password.getEditText()).getText().toString().trim());
 
+                //check for validity
                 if (emailText.isEmpty()) {
                    email.getEditText().setError("Email is required");
                    email.getEditText().requestFocus();
@@ -58,12 +61,14 @@ public class ActivityWelcome extends AppCompatActivity {
                     return;
                 }
 
+                //Authenticate Email and Password
                 mAuth = FirebaseAuth.getInstance();
                 mAuth.signInWithEmailAndPassword(emailText, passwordText)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
+                            //If successful go to main activity
                             Intent mainIntent = new Intent(ActivityWelcome.this, MainActivity.class);
                             startActivity(mainIntent);
                             finish();
@@ -82,6 +87,7 @@ public class ActivityWelcome extends AppCompatActivity {
         goToSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Go to register to sign up!
                 Intent registerIntent = new Intent(ActivityWelcome.this, ActivityRegister.class);
                 startActivity(registerIntent);
             }
