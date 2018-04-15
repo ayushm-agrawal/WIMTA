@@ -107,6 +107,7 @@ public class ActivityCreateBasicProfile extends AppCompatActivity {
                                                 startActivity(studentIntent);
                                                 finish();
                                             }
+
                                         }
                                     }
                                 });
