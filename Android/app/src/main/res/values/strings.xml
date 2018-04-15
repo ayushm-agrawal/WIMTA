@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WIMTA</string>
+    <string name="app_name">Wimta</string>
     <string name="name">Name</string>
     <string name="username">Username</string>
     <string name="change_profile_photo">Upload Profile Photo</string>

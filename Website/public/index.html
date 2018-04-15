@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script language="javascript" type="text/javascript" src="wimta.js"></script>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+    padding: 0px;
+    text-align: center;
+    background: #A52714;
+    color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+    font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+    float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+/*change color for active session*/
+.navbar a.active{
+    background-color: #000;
+    color: white;
+}
+
+/* Column container */
+.row {  
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    -ms-flex: 30%; /* IE10 */
+    flex: 30%;
+    background-color: #A52714;
+    padding: 20px;
+}
+
+/* Main column */
+.main {   
+    -ms-flex: 70%; /* IE10 */
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
+}
+
+/* Footer */
+
+    .footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#000;
+    color: white;
+    text-align: center;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .row {   
+        flex-direction: column;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+    }
+  .column {
+  float: centre;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+  
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+  background-color: #940404;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+ <div class="shadow">
+  <img src ="https://files.slack.com/files-pri/TA49QA76K-FA84PG0J3/static_logo1.png">
+    </div>
+
+</div>
+
+<div class="navbar">
+  <a href="#">Home</a>
+  <a class="active" href="#">Active TA</a>
+  <a href="#">TA Directory</a>
+  <a href="#" class="right">Login/Signup</a>
+</div>
+
+<div class="row">
+  <div class="side">
+      <h2>About WIMTA</h2>
+      <p>WIMTA, is userfriendly creation to make student's life a lot easier.</p>
+      <p>It is a quick check-in and check-out app which enables students to get the availability of a TA and current checkedin checkout status.</p>
+      <p>It comes very handy everytime when student wonders wheather to go to src for help and whatif my TA is not there and I will have to come back.
+      It also enables students to see the schedule of TA.</p>
+      <h3>How it Works?</h3>
+      <p>WIMTA stores authorised TA information in firebase database. When TA check into the app in Student Resource centre, it gets update on the database which is then displayed onto the apps and website. 
+      Checkin signals are sent to raspberry pi via bluetooth.</p>
+      
+  </div>
+  <div class="main">
+      <h2><iframe src="https://freesecure.timeanddate.com/clock/i675dznr/n132/tt0/tw0/tm1/ts1/tb4" frameborder="0" width="87" height="36"></iframe>
+</h2>
+      <h5>Now at SRC</h5>
+      <div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="https://free.clipartof.com/165-Ninja-Avatar-Character-With-Ninja-Stars-And-A-Sword-Free-Vector-Clipart-Illustration.jpg" alt="Avatar"style="width:100%">
+      <div class="container">
+        <h2><font color=#D00000>Ayush</font></h2>
+        <p class="title">CSCE 486</p>
+        <p>UTA</p>
+        <p>aagrawal@unl.edu</p>
+        <p><button class="button">Schedule</button></p>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://free.clipartof.com/156-Avatar-Character-Wearing-Classy-Brown-Hat-Free-Vector-Clipart-Illustration.jpg" alt="shivi" style="width:100%">
+      <div class="container">
+     <h2><font color=#D00000>Shivani</font></h2>
+        <p class="title">CSCE 235</p>
+         <p>UTA</p>
+        <p>stamkiya@unl.edu</p>
+        <p><button class="button">Schedule</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="https://free.clipartof.com/170-Cool-Purple-Avatar-Character-Wearing-Shades-Free-Vector-Clipart-Illustration.jpg" alt="Rahul" style="width:100%">
+      <div class="container">
+       <h2><font color=#D00000>Rahul</font></h2>
+        <p class="title">CSCE 156</p>
+        <p>UTA</p>
+        <p>rahuliya2@unl.edu</p>
+        <p><button class="button">Schedule</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+ <div class="column">
+    <div class="card">
+      <img src="https://free.clipartof.com/174-Devil-Avatar-Character-With-Horns-And-Fangs-Free-Vector-Clipart-Illustration.jpg" alt="Atharva" style="width:100%">
+      <div class="container">
+       <h2><font color=#D00000>Atharva</font></h2>
+        <p class="title">CSCE 310</p>
+        <p>UTA</p>
+        <p>atharva2@unl.edu</p>
+        <p><button class="button">Schedule</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="footer">
+  <h2>Hope this small creation will make a huge difference.</h2>
+</div>
+
+</body>
+</html>

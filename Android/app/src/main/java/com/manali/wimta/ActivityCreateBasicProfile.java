@@ -85,11 +85,7 @@ public class ActivityCreateBasicProfile extends AppCompatActivity {
                                 userMap.put("email", currentUser.getEmail());
                                 userMap.put("fullName", fullNameText);
                                 userMap.put("userName", userNameText);
-                                if(status == 1){
-                                    userMap.put("taStatus", status);
-                                }else{
-                                    userMap.put("taStatus", status);
-                                }
+                                userMap.put("taStatus", status);
 
                                 //Updating the database.
                                 mDatabaseReference.updateChildren(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -99,7 +95,7 @@ public class ActivityCreateBasicProfile extends AppCompatActivity {
                                             Toast.makeText(ActivityCreateBasicProfile.this, "User details were added successfully", Toast.LENGTH_SHORT).show();
                                             if(status == 0) {
                                                 mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("VerifyTA").child(currentUser.getUid());
-                                                Intent studentIntent = new Intent(ActivityCreateBasicProfile.this, MainActivity.class);
+                                                Intent studentIntent = new Intent(ActivityCreateBasicProfile.this, ActivityVerifyTA.class);
                                                 startActivity(studentIntent);
                                                 finish();
                                             }else if(status == -1){
